@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-01-pod-03
+  labels:
+    name: lab-01-pod-03
+
+spec:
+  containers:
+  - name: lab-01-pod-03
+    image: nginx
+    ports:
+      - containerPort: 80
+  restartPolicy: OnFailure

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-03-deploy-02-dep
+  labels:
+    app: lab-03-deploy-02-dep
+
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: lab-03-deploy-02-pod
+  template:
+    metadata:
+      labels:
+        app: lab-03-deploy-02-pod
+    spec:
+      containers:
+      - name: lab-03-deploy-02-cont
+        image: nginx
+

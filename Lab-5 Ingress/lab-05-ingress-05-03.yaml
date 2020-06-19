@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+spec:
+  rules:
+    - host: host.clear2pay.com
+      http:
+        paths:
+          - path: /webapp1
+            backend:
+              serviceName: lab-05-ingress-05-web1
+              servicePort: 80
+          - path: /webapp2
+            backend:
+              serviceName: lab-05-ingress-05-web2
+              servicePort: 80
+          - backend:
+              serviceName: lab-05-ingress-05-web3
+              servicePort: 80

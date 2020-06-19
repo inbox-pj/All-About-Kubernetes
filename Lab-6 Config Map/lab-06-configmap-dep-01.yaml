@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:
+    lab-06-configmap-01
+  labels:
+    lab-06-configmap-01
+spec:
+  selector:
+    matchLabels:
+      app: lab-06-configmap-01
+  template:
+    metadata:
+      labels:
+        app: lab-06-configmap-01
+    spec:
+      containers:
+      - name: lab-06-configmap-01
+        image: nginx
+        envFrom:
+        - configMapRef:
+            name: lab-06-configmap

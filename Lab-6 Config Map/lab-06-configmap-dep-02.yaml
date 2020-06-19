@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-06-configmap-02
+
+spec:
+  selector:
+    matchLabels:
+      app: lab-06-configmap-02
+  template:
+    metadata:
+      labels:
+        app: lab-06-configmap-02
+    spec:
+      containers:
+      - name: lab-06-configmap-02
+        image: nginx
+        env:
+        - name: LAB_SECTION
+          valueFrom:
+            configMapKeyRef:
+              name: lab-06-configmap
+              key: LAB_SUBJECT

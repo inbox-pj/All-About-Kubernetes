@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-01-pod-02
+  labels:
+    name: lab-01-pod-02
+
+spec:
+  containers:
+  - name: lab-01-pod-02
+    image: nginx
+    env:
+      - name: POD_ENV1
+        value: "These are your "
+      - name: POD_ENV2
+        value: "pod env vars."
+    command: ["/bin/sh", "-c", "echo $POD_ENV1 $POD_ENV2 && hostname"]
+  hostname: lab-01-pod-02-os
+  restartPolicy: OnFailure

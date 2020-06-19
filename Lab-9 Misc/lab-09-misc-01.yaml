@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-09-misc-01-dev
+  labels:
+    env: development
+    author: pjaiswal
+    application_type: ui
+    release-version: "1.0"
+spec:
+  containers:
+    - name: lab-09-misc-01-dev
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-09-misc-01-sit
+  labels:
+    env: sit
+    author: pjaiswal1
+    application_type: ui
+    release-version: "1.0"
+spec:
+  containers:
+    - name: lab-09-misc-01-sit
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-09-misc-01-uat
+  labels:
+    env: uat
+    author: pjaiswal2
+    application_type: ui
+    release-version: "1.0"
+spec:
+  containers:
+    - name: lab-09-misc-01-uat
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-09-misc-01-prod
+  labels:
+    env: production
+    author: pjaiswal3
+    application_type: ui
+    release-version: "2.0"
+    team: marketing
+spec:
+  containers:
+    - name: lab-09-misc-01-prod
+      image: nginx

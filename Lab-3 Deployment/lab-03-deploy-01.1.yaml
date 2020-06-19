@@ -1,0 +1,21 @@
+apiVersion: apps/v2
+kind: Deployment
+metadata:
+  name: lab-03-deploy-01
+  labels:
+    app: lab-03-deploy-01
+
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: lab-03-deploy-01-pod
+  template:
+    metadata:
+      labels:
+        app: lab-03-deploy-01-pod
+    spec:
+      containers:
+      - name: lab-03-deploy-01-cont
+        image: nginx
+

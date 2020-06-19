@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: lab-05-ingress-01
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: host.clear2pay.com
+      http:
+        paths:
+          - path: /foo
+            backend:
+              serviceName: service1
+              servicePort: 4200
+          - path: /bar
+            backend:
+              serviceName: service2
+              servicePort: 8080
