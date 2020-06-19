@@ -119,10 +119,9 @@ To start up the dashboard, type `minikube dashboard`
 This will bring up the dashboard in your browser.
 
 
-------------
 ## Launch Single Node Kubernetes Cluster
 
-***Step 1 - Cluster Info***
+**Step 1 - Cluster Info**
 
 The cluster can be interacted with using the kubectl CLI. This is the main approach used for managing Kubernetes and the applications running on top of the cluster.
 
@@ -142,7 +141,8 @@ NAME       STATUS   ROLES    AGE   VERSION
 minikube   Ready    master   4d    v1.18.3
 ``` 
 
-***Step 2 - Deploy Containers***
+**Step 2 - Deploy Containers**
+
 With a running Kubernetes cluster, containers can now be deployed.
 
 Using `kubectl run`, it allows containers to be deployed onto the cluster - `kubectl create deployment first-deployment --image=katacoda/docker-http-server`
@@ -157,7 +157,7 @@ Once the container is running it can be exposed via different networking options
 `kubectl expose deployment first-deployment --port=80 --type=NodePort`
 
 
-***Step 4 - Dashboard***
+**Step 3 - Dashboard**
 
 Enable the dashboard using `Minikube` with the command `minikube addons enable dashboard`, if not enabled yet.
 
